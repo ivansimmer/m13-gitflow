@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button buttonHello;
+    Button buttonHello, buttonNew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonHello = findViewById(R.id.button);
+        buttonNew = findViewById(R.id.button2);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         buttonHello.setOnClickListener(view -> {
             Toast.makeText(this, "Hola!", Toast.LENGTH_SHORT).show();
+        });
+
+        buttonNew.setOnClickListener(view -> {
+            Toast.makeText(this, "Soy la nueva funcionalidad!", Toast.LENGTH_SHORT).show();
         });
     }
 }
